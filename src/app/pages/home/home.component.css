@@ -1,0 +1,47 @@
+.example-spacer{
+  flex: 1 1 auto;
+}
+
+.users-list{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  /*justify-content: space-between;*/
+}
+
+.user-item{
+  width: 250px;
+  position: relative;
+  border: 1px solid lightgray;
+}
+
+.user-image{
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.user-description{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-checkbox{
+  position: absolute;
+  right: 0;
+}
+
+.user-name{
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+
+

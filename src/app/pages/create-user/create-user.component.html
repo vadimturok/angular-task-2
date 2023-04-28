@@ -1,0 +1,36 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="createForm">
+  <div class="formGroup">
+    <label for="firstname">First Name</label>
+    <input formControlName="firstname" class="input" id="firstname" type="text">
+    <div class="formError" *ngIf="fc.firstname.invalid && (fc.firstname.dirty || fc.firstname.touched)">
+      <div *ngIf="fc.firstname.errors?.['required']">First name is required!</div>
+      <div *ngIf="fc.firstname.errors?.['minlength']">Min length is 2 characters!</div>
+    </div>
+  </div>
+  <div class="formGroup">
+    <label for="lastname">Last Name</label>
+    <input formControlName="lastname" class="input" id="lastname" type="text">
+    <div class="formError" *ngIf="fc.lastname.invalid && (fc.lastname.dirty || fc.lastname.touched)">
+      <div *ngIf="fc.lastname.errors?.['required']">Last name is required!</div>
+      <div *ngIf="fc.lastname.errors?.['minlength']">Min length is 2 characters!</div>
+      <div *ngIf="fc.lastname.errors?.['maxlength']">Max length is 60 characters!</div>
+    </div>
+  </div>
+  <div class="formGroup">
+    <label for="email">Email</label>
+    <input formControlName="email" class="input" id="email" type="email">
+    <div class="formError" *ngIf="fc.email.invalid && (fc.email.dirty || fc.email.touched)">
+      <div *ngIf="fc.email.errors?.['required']">Email is required!</div>
+      <div *ngIf="fc.email.errors?.['email']">Invalid email!</div>
+    </div>
+  </div>
+  <div class="formGroup">
+    <label for="phone">Phone</label>
+    <input formControlName="phone" class="input" id="phone" type="tel">
+    <div class="formError" *ngIf="fc.phone.invalid && (fc.phone.dirty || fc.phone.touched)">
+      <div *ngIf="fc.phone.errors?.['required']">Phone is required!</div>
+      <div *ngIf="fc.phone.errors?.['pattern']">Invalid phone!</div>
+    </div>
+  </div>
+  <button [disabled]="!userForm.valid" class="submitButton" type="submit">Submit</button>
+</form>

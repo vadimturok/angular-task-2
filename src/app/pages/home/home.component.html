@@ -1,0 +1,19 @@
+<mat-toolbar *ngIf="users">
+  <button mat-button color="primary" [disabled]="!users.length" (click)="selectAll()">Select all</button>
+  <button mat-button color="primary" [disabled]="!selectedUsers.length" (click)="delete()">Delete</button>
+  <button mat-button color="primary" routerLink="/create">Create User</button>
+</mat-toolbar>
+
+<div class="users-list">
+  <div class="user-item" *ngFor="let user of users">
+    <mat-checkbox (change)="selectOne($event.checked, user)" [checked]="selectedUsers.includes(user)" class="user-checkbox"/>
+    <img class="user-image" [src]="user.imageUrl" [alt]="user.name">
+    <div class="user-description">
+      <div class="user-name">
+        <span>{{user.name}}</span>
+      </div>
+      <div class="user-email">{{user.email}}</div>
+      <div class="user-phone">{{user.phone}}</div>
+    </div>
+  </div>
+</div>
