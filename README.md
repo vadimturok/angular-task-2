@@ -1,6 +1,6 @@
-# Tech Magic Angular Task 1
+# Tech Magic Angular Task 2
 > Live demo
->  [_here_](https://vadimturok.github.io/angular-task-1/). <!-- If you have the project hosted somewhere, include the link here. -->
+>  [_here_](https://vadimturok.github.io/angular-task-2/). <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
 * [Technologies Used](#technologies-used)
