@@ -1,8 +1,25 @@
-<mat-toolbar *ngIf="users">
-  <button mat-button color="primary" [disabled]="!users.length" (click)="selectAll()">Select all</button>
-  <button mat-button color="primary" [disabled]="!selectedUsers.length" (click)="delete()">Delete</button>
-  <button mat-button color="primary" routerLink="/create">Create User</button>
-</mat-toolbar>
+<div class="filters" *ngIf="users">
+  <div>
+    <button mat-button color="primary" [disabled]="!users.length" (click)="selectAll()">Select all</button>
+    <button mat-button color="primary" [disabled]="!selectedUsers.length" (click)="delete()">Delete</button>
+    <button mat-button color="primary" routerLink="/create">Create User</button>
+    <mat-form-field class="select" appearance="fill">
+      <mat-label>Sorting order</mat-label>
+      <mat-select (selectionChange)="orderByName($event)"  value="Sorting order">
+        <mat-option value="firstname">
+          First name
+        </mat-option>
+        <mat-option value="lastname">
+          Last name
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="inputGroup">
+    <input name="username" #username type="text" placeholder="Search users"/>
+    <button mat-raised-button color="primary" (click)="find(username.value)">Search</button>
+  </div>
+</div>
 
 <div class="users-list">
   <div class="user-item" *ngFor="let user of users">

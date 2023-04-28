@@ -41,5 +41,26 @@ export class UserService {
     this.users = this.users.filter(user => !usersToDelete.includes(user))
     this.usersSubject.next(this.users)
   }
+  searchUsers(term: string){
+    if(term.length == 0){
+      this.getAllUsers()
+    }else{
+      this.users = this.users.filter(user => user.name.toLowerCase().includes(term.toLowerCase()))
+    }
+    this.usersSubject.next(this.users)
+  }
+
+  orderByName(orderType: 'firstname' | 'lastname'){
+    this.users = this.users.sort((a, b) => {
+      const a_name = a.name.split(' ')
+      const b_name = b.name.split(' ')
+      if(orderType === 'firstname'){
+        return a_name[0].localeCompare(b_name[0])
+      }else{
+        return a_name[1].localeCompare(b_name[1])
+      }
+    })
+    this.usersSubject.next(this.users)
+  }
 
 }

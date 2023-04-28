@@ -1,15 +1,18 @@
-.example-spacer{
-  flex: 1 1 auto;
+.filters{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 20px 0 20px;
+  border-bottom: 1px solid lightgray;
 }
 
 .users-list{
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 30px 10px 50px 20px;
   display: flex;
   gap: 20px;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  /*justify-content: space-between;*/
 }
 
 .user-item{
@@ -41,6 +44,23 @@
   margin-top: 10px;
   display: flex;
   gap: 20px;
+}
+
+.inputGroup{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+input{
+  padding: 7px;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.select{
+  margin-left: 20px;
 }
 
 

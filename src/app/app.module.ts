@@ -13,6 +13,9 @@ import { HomeComponent } from './pages/home/home.component';
 import {RouterModule} from "@angular/router";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
+import {FlexModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import {ReactiveFormsModule} from "@angular/forms";
     AppRoutingModule,
     RouterModule,
     MatCheckboxModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    FlexModule
   ],
   providers: [],
   bootstrap: [AppComponent]
