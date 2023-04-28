@@ -21,7 +21,7 @@ export class UserService {
   getAllUsers(){
     this.http.get<User[]>(GET_USERS_URL).subscribe(users => {
       this.users = users.map(user => {
-        return {...user, imageUrl: `/assets/img_${user.id % 4}.png`}
+        return {...user, imageUrl: `https://picsum.photos/id/${user.id}/250/200`}
       })
       this.usersSubject.next(this.users)
     })
@@ -29,7 +29,7 @@ export class UserService {
 
   createUser(user: UserBody){
     this.http.post<User>(ADD_USER_URL, user).subscribe(newUser => {
-      this.users = [...this.users, {...newUser, imageUrl: `/assets/img_${newUser.id % 4}.png`}]
+      this.users = [...this.users, {...newUser, imageUrl: `https://picsum.photos/id/${newUser.id}/250/200`}]
       this.usersSubject.next(this.users)
     })
   }
